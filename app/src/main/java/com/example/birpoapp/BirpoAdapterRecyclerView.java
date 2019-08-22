@@ -36,11 +36,12 @@ public class BirpoAdapterRecyclerView extends RecyclerView.Adapter<BirpoAdapterR
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.nomeProduto.setText(produtos.get(position).getNome());
+        holder.imgProduto.setImageResource(produtos.get(position).getImgProd());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return produtos.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
