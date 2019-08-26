@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import java.util.List;
 
 public class Produtos_Activity extends AppCompatActivity {
     Toolbar toolbar;
-    List<Produtos> lstProd;
+    List<Produtos> lstProd, lstMarc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +32,26 @@ public class Produtos_Activity extends AppCompatActivity {
         lstProd.add(new Produtos(R.drawable.pnescafe, "Nescafé", "Marca de café", 10));
         lstProd.add(new Produtos(R.drawable.banana, "Banana", "Fruta", 5));
 
+        lstMarc = new ArrayList<>();
+        lstMarc.add(new Produtos(R.drawable.apple, " ", "Marca", 2));
+        lstMarc.add(new Produtos(R.drawable.hp, " ", "Marca", 4));
+        lstMarc.add(new Produtos(R.drawable.sony, " ", "Marca", 3));
+
+//        recycler1
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.idrecyclerView);
         BirpoAdapterRecyclerView AdapterRecyclerView = new BirpoAdapterRecyclerView(getApplicationContext(), lstProd);
         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
         recyclerView.setAdapter(AdapterRecyclerView);
-
-       RecyclerView recyclerView1 = (RecyclerView) findViewById(R.id.idrecyclerViewtwo);
-       BirpoAdapterRecyclerView recyclerView2 = new BirpoAdapterRecyclerView(getApplicationContext(), lstProd);
-       recyclerView1.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
-       recyclerView1.setAdapter(recyclerView2);
+//        recycler2
+        RecyclerView recyclerView1 = (RecyclerView) findViewById(R.id.idrecyclerViewtwo);
+        BirpoAdapterRecyclerView recyclerView2 = new BirpoAdapterRecyclerView(getApplicationContext(), lstProd);
+        recyclerView1.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
+        recyclerView1.setAdapter(recyclerView2);
+//        recycler3
+        RecyclerView recyclerView3 = (RecyclerView) findViewById(R.id.idrecyclerViewthree);
+        BirpoAdapterMarcas recyclerView4 = new BirpoAdapterMarcas(getApplicationContext(), lstMarc);
+        recyclerView3.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
+        recyclerView3.setAdapter(recyclerView4);
     }
 
     @Override

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Descricao_produto_Activity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarprodutos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <include layout="@layout/toolbar_birpo" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_below="@id/toolbarprodutos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/Brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brand:"
+            android:textSize="22sp"
+            android:textColor="#47C1D1"/>
+
+        <TextView
+            android:id="@+id/nomeProdutoD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome"
+            android:textColor="#47C1D1"
+            android:textSize="22sp"
+            android:paddingLeft="5dp"
+            android:layout_toRightOf="@id/Brand"/>
+
+        <ImageView
+            android:id="@+id/idimgD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pnescafe"
+            android:layout_below="@id/Brand"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/idWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight: "
+            android:textColor="#D3545A"
+            android:textSize="22sp"
+            android:layout_toRightOf="@id/idimgD"
+            android:layout_below="@id/nomeProdutoD"
+            android:layout_marginLeft="30dp"/>
+
+        <EditText
+            android:id="@+id/edtWeight"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edt_desc"
+            android:drawableRight="@drawable/ic_weight"
+            android:layout_toRightOf="@id/idWeight"
+            android:layout_below="@id/nomeProdutoD"
+            android:textSize="18sp"
+            android:padding="2dp"/>
+
+        <TextView
+            android:id="@+id/idQuant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idWeight"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/idimgD"
+            android:text="Quantity: "
+            android:layout_marginTop="25dp"
+            android:textColor="#D3545A"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/edtQuant"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtWeight"
+            android:layout_toRightOf="@id/idQuant"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/edt_desc"
+            android:padding="2dp"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+</RelativeLayout>
