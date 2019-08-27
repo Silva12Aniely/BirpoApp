@@ -43,10 +43,11 @@
 
         <ImageView
             android:id="@+id/idimgD"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/Brand"
-            android:layout_margin="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/pnescafe" />
 
         <TextView
@@ -54,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/nomeProdutoD"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/idimgD"
             android:text="Weight: "
             android:textColor="#D3545A"
@@ -65,7 +66,7 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/nomeProdutoD"
-            android:layout_marginLeft="22dp"
+            android:layout_marginLeft="12dp"
             android:layout_toRightOf="@id/idWeight"
             android:background="@drawable/edt_desc"
             android:drawableRight="@drawable/ic_weight"
@@ -79,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/idWeight"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="25dp"
             android:layout_toRightOf="@id/idimgD"
             android:text="Quantity: "
@@ -91,14 +92,13 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/edtWeight"
-            android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"
             android:layout_toRightOf="@id/idQuant"
             android:background="@drawable/edt_desc"
             android:drawableLeft="@drawable/ic_add"
             android:drawableRight="@drawable/ic_minus"
             android:hint="0"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textAlignment="center"
             android:textSize="18sp" />
 
@@ -107,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/edtQuant"
-            android:layout_marginLeft="130dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="20dp"
             android:layout_toRightOf="@id/idimgD"
             android:background="@drawable/btn_login"

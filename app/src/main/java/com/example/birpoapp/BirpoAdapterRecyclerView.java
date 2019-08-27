@@ -43,12 +43,13 @@ public class BirpoAdapterRecyclerView extends RecyclerView.Adapter<BirpoAdapterR
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, Produtos_Activity.class);
+                Intent intent = new Intent(context, Descricao_produto_Activity.class);
 
                 intent.putExtra("Nome", produtos.get(position).getNome());
                 intent.putExtra("imgProd", produtos.get(position).getImgProd());
                 intent.putExtra("Descricao", produtos.get(position).getDescricao());
-                context.startActivity(intent);
+                intent.putExtra("NomeD", produtos.get(position).getNome());
+                context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             }
         });
 

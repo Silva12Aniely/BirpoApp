@@ -21,8 +21,6 @@ import java.util.List;
 public class Produtos_Activity extends AppCompatActivity {
     Toolbar toolbar;
     List<Produtos> lstProd, lstMarc;
-    private TextView txtNome,txtReward, txtAvalt;
-    private ImageView imgProd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,18 +55,6 @@ public class Produtos_Activity extends AppCompatActivity {
         BirpoAdapterMarcas recyclerView4 = new BirpoAdapterMarcas(getApplicationContext(), lstMarc);
         recyclerView3.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
         recyclerView3.setAdapter(recyclerView4);
-
-//        Click dos produtos
-        txtNome = (TextView) findViewById(R.id.nomeProdutoD);
-        imgProd = (ImageView) findViewById(R.id.idimgD);
-
-        Intent intent = getIntent();
-        String nome = intent.getExtras().getString("Nome");
-        int imgProd = intent.getExtras().getInt("imgProd");
-
-
-        txtNome.setText(nome);
-
     }
 
     @Override
