@@ -36,7 +36,7 @@ public class BirpoAdapterRecyclerView extends RecyclerView.Adapter<BirpoAdapterR
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.nomeProduto.setText(produtos.get(position).getNome());
         holder.imgProduto.setImageResource(produtos.get(position).getImgProd());
 
@@ -45,6 +45,10 @@ public class BirpoAdapterRecyclerView extends RecyclerView.Adapter<BirpoAdapterR
             public void onClick(View view) {
                 Intent intent = new Intent(context, Produtos_Activity.class);
 
+                intent.putExtra("Nome", produtos.get(position).getNome());
+                intent.putExtra("imgProd", produtos.get(position).getImgProd());
+                intent.putExtra("Descricao", produtos.get(position).getDescricao());
+                context.startActivity(intent);
             }
         });
 

@@ -17,9 +17,10 @@
     </androidx.appcompat.widget.Toolbar>
 
     <RelativeLayout
-        android:layout_below="@id/toolbarprodutos"
+        android:id="@+id/idProdD"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarprodutos"
         android:layout_margin="10dp">
 
         <TextView
@@ -27,48 +28,51 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Brand:"
-            android:textSize="22sp"
-            android:textColor="#47C1D1"/>
+            android:textColor="#47C1D1"
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/nomeProdutoD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/Brand"
+            android:paddingLeft="5dp"
             android:text="Nome"
             android:textColor="#47C1D1"
-            android:textSize="22sp"
-            android:paddingLeft="5dp"
-            android:layout_toRightOf="@id/Brand"/>
+            android:textSize="22sp" />
 
         <ImageView
             android:id="@+id/idimgD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/pnescafe"
             android:layout_below="@id/Brand"
-            android:layout_margin="20dp"/>
+            android:layout_margin="20dp"
+            android:src="@drawable/pnescafe" />
 
         <TextView
             android:id="@+id/idWeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/nomeProdutoD"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/idimgD"
             android:text="Weight: "
             android:textColor="#D3545A"
-            android:textSize="22sp"
-            android:layout_toRightOf="@id/idimgD"
-            android:layout_below="@id/nomeProdutoD"
-            android:layout_marginLeft="30dp"/>
+            android:textSize="22sp" />
 
         <EditText
             android:id="@+id/edtWeight"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:layout_below="@id/nomeProdutoD"
+            android:layout_marginLeft="22dp"
+            android:layout_toRightOf="@id/idWeight"
             android:background="@drawable/edt_desc"
             android:drawableRight="@drawable/ic_weight"
-            android:layout_toRightOf="@id/idWeight"
-            android:layout_below="@id/nomeProdutoD"
-            android:textSize="18sp"
-            android:padding="2dp"/>
+            android:hint="Select wt."
+            android:padding="2dp"
+            android:textAlignment="center"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/idQuant"
@@ -76,9 +80,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/idWeight"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
             android:layout_toRightOf="@id/idimgD"
             android:text="Quantity: "
-            android:layout_marginTop="25dp"
             android:textColor="#D3545A"
             android:textSize="22sp" />
 
@@ -87,11 +91,143 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/edtWeight"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
             android:layout_toRightOf="@id/idQuant"
-            android:layout_marginTop="25dp"
             android:background="@drawable/edt_desc"
-            android:padding="2dp"
+            android:drawableLeft="@drawable/ic_add"
+            android:drawableRight="@drawable/ic_minus"
+            android:hint="0"
+            android:padding="5dp"
+            android:textAlignment="center"
             android:textSize="18sp" />
 
+        <Button
+            android:id="@+id/idAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtQuant"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/idimgD"
+            android:background="@drawable/btn_login"
+            android:padding="10dp"
+            android:text="Add To Cart"
+            android:textAllCaps="true"
+            android:textColor="#fff" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idProdD"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#F7F7F7"
+        android:gravity="center"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/idfav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_favorite"
+            android:drawablePadding="10dp"
+            android:paddingRight="50dp"
+            android:text="Add to compare"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/idtag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/idfav"
+            android:drawableLeft="@drawable/ic_tag"
+            android:drawablePadding="10dp"
+            android:text="Add to compare"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lblText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idtag"
+            android:layout_marginTop="40dp"
+            android:text="Description: "
+            android:textColor="#47C1D1"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/lblText"
+            android:background="#F7F7F7">
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:id="@+id/PCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Code: "
+                android:textColor="#D3545A"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:id="@+id/idProdName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/PCode"
+                android:paddingLeft="10dp"
+                android:text="Nome"
+                android:textColor="#D3545A"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/RewardP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reward Points: "
+                android:textColor="#D3545A"
+                android:textSize="20sp"
+                android:layout_below="@id/PCode"/>
+
+            <TextView
+                android:id="@+id/idProdReward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/RewardP"
+                android:layout_below="@id/idProdName"
+                android:paddingLeft="10dp"
+                android:text="49"
+                android:textColor="#D3545A"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/AvaltP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Code: "
+                android:layout_below="@id/RewardP"
+                android:textColor="#D3545A"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/idProdAvalt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/PCode"
+                android:paddingLeft="10dp"
+                android:layout_below="@id/idProdReward"
+                android:text="In Stock"
+                android:textColor="#D3545A"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>
